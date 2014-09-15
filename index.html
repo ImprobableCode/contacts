@@ -20,8 +20,10 @@ function onDeviceReady() {
 
 function onSuccess(contacts) {
        for (var i = 0; i < contacts.length; i++) {
-            console.log("Display Name = " + contacts[i].displayName);
+            var element = document.getElementById('info');
+            element.innerHTML = "Display Name = " + contacts[i].displayName;
         }
+         
 }
 
 // onError: Failed to get the contacts
@@ -33,6 +35,8 @@ function onError(contactError) {
     </script>
   </head>
   <body>
-
+    <p id="info">Image info..</p>
   </body>
 </html>
+
+
