@@ -8,6 +8,12 @@
 
 document.addEventListener("deviceready", onDeviceReady, false);
 
+function onDeviceReady(){
+
+  navigator.contacts.find(fields, onSuccess, onError, options);
+}
+
+
 function onSuccess(contacts) {
         var element = document.getElementById('info');
     element.innerHTML = "Found" + contacts.length + " contacts. ");
@@ -23,8 +29,8 @@ options.filter   = "Bob";
 options.multiple = true;
 options.desiredFields = [navigator.contacts.fieldType.id];
 var fields       = [navigator.contacts.fieldType.displayName, navigator.contacts.fieldType.name];
-navigator.contacts.find(fields, onSuccess, onError, options);
-  
+
+
 }
 
     </script>
