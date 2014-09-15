@@ -10,7 +10,7 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady(){
 
-  navigator.contacts.find(fields, onSuccess, onError, options);
+  navigator.contacts.find(contacts, onSuccess, onError, options);
 
   var element = document.getElementById('info');
   element.innerHTML = "Ready";
@@ -20,7 +20,7 @@ function onDeviceReady(){
 function onSuccess(contacts) {
         var element = document.getElementById('info');
     element.innerHTML = "Found" + contacts.length + " contacts. ";
-};
+}
 
 function onError(contactError) {
    var element = document.getElementById('info');
