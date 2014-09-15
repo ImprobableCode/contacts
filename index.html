@@ -6,7 +6,7 @@
     <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
     <script type="text/javascript" charset="utf-8">
 
-document.addEventListener("deviceready",onDeviceReady,false);
+document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
     var options = new ContactFindOptions();
@@ -14,6 +14,9 @@ function onDeviceReady() {
     options.multiple = true;      // return multiple results
     filter = ["displayName", "name"];   // return contact.displayName 
     navigator.contacts.find(filter, onSuccess, onError, options);
+            var element = document.getElementById('info');
+            element.innerHTML = "Ready";
+
 }
 
 // onSuccess: Get a snapshot of the current contacts
