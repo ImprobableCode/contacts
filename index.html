@@ -11,6 +11,7 @@ document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady(){
 
   navigator.contacts.find(fields, onSuccess, onError, options);
+
   var element = document.getElementById('info');
   element.innerHTML = "Ready";
 }
@@ -22,10 +23,11 @@ function onSuccess(contacts) {
 };
 
 function onError(contactError) {
-    alert('onError!');
+   var element = document.getElementById('info');
+  element.innerHTML = "ERROR";
 };
 
-function find(){
+function mine(){
 var options      = new ContactFindOptions();
 options.filter   = "Bob";
 options.multiple = true;
