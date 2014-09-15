@@ -11,12 +11,14 @@ document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady(){
 
   navigator.contacts.find(fields, onSuccess, onError, options);
+  var element = document.getElementById('info');
+  element.innerHTML = "Ready";
 }
 
 
 function onSuccess(contacts) {
         var element = document.getElementById('info');
-    element.innerHTML = "Found" + contacts.length + " contacts. ");
+    element.innerHTML = "Found" + contacts.length + " contacts. ";
 };
 
 function onError(contactError) {
