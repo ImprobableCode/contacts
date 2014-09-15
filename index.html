@@ -18,7 +18,7 @@ function onDeviceReady(){
 
 
 function onSuccess(contacts) {
-        var element = document.getElementById('info');
+    var element = document.getElementById('info');
     element.innerHTML = "Found" + contacts.length + " contacts. ";
 }
 
@@ -27,13 +27,13 @@ function onError(contactError) {
   element.innerHTML = "ERROR";
 };
 
-function mine(){
+/*function mine(){
 var options      = new ContactFindOptions();
 options.filter   = "Bob";
 options.multiple = true;
 options.desiredFields = [navigator.contacts.fieldType.id];
 var fields       = [navigator.contacts.fieldType.displayName, navigator.contacts.fieldType.name];
-
+*/
 
 }
 
