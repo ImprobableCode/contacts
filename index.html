@@ -8,32 +8,23 @@
 
 document.addEventListener("deviceready", onDeviceReady, false);
 
-function onDeviceReady() {
-    var options = new ContactFindOptions();
-    options.filter = "";          // empty search string returns all contacts
-    options.multiple = true;      // return multiple results
-    filter = ["displayName", "name"];   // return contact.displayName 
-    navigator.contacts.find(filter, onSuccess, onError, options);
-            var element = document.getElementById('info');
-            element.innerHTML = "Ready";
-
-}
-
-// onSuccess: Get a snapshot of the current contacts
-
 function onSuccess(contacts) {
-       for (var i = 0; i < contacts.length; i++) {
-            var element = document.getElementById('info');
-            element.innerHTML = "Display Name = " + contacts[i].displayName;
-        }
-         
-}
-
-// onError: Failed to get the contacts
+        var element = document.getElementById('info');
+    element.innerHTML = "Found" + contacts.length + " contacts. ");
+};
 
 function onError(contactError) {
-     alert('onError!');
-}
+    alert('onError!');
+};
+
+// find all contacts with 'Bob' in any name field
+var options      = new ContactFindOptions();
+options.filter   = "Bob";
+options.multiple = true;
+options.desiredFields = [navigator.contacts.fieldType.id];
+var fields       = [navigator.contacts.fieldType.displayName, navigator.contacts.fieldType.name];
+navigator.contacts.find(fields, onSuccess, onError, options);
+
 
     </script>
   </head>
