@@ -13,7 +13,7 @@ function onDeviceReady()
   // find all contacts with 'Bob' in any name field
  // var options = new ContactFindOptions();
   //options.filter = "";
-  var fields = "";
+
 
   var element = document.getElementById('info');
   element.innerHTML = "Ready";
@@ -21,8 +21,7 @@ function onDeviceReady()
   var fields       = [navigator.contacts.fieldType.displayName, navigator.contacts.fieldType.name];
   navigator.contacts.find(fields, onSuccess, onError, options);
 
-  var element = document.getElementById('info');
-  element.innerHTML = fields;
+
 }
 
  function onSuccess(contacts) 
