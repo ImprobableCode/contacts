@@ -10,38 +10,28 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady()
 {
-
   var element = document.getElementById('info');
   element.innerHTML = "Ready";
 
-  var fields       = navigator.contacts.fieldType.displayName;
-  navigator.contacts.find(fields, onSuccess, onError);
-
-
+  navigator.contacts.find(onSuccess, onError);
+  //navigator.contacts.find(fields, onSuccess, onError, options);
 }
 
  function onSuccess(contacts) 
                
-                 {
+     {
+      var element = document.getElementById('info2');
+      element.innerHTML = "Display Name = " + contacts.displayName;
 
-
-                    var element = document.getElementById('info2');
-                    element.innerHTML = "Display Name = " + contacts.displayName;
-
-                    var element = document.getElementById('info3');
-                    element.innerHTML = "Display Name = " + contacts.fieldType.name;
-
-                 }
-            
-
-
-
-function onError(contactError) {
-   var element = document.getElementById('info');
+      var element = document.getElementById('info3');
+      element.innerHTML = "Display Name = " + contacts.fieldType.name;
+      }
+           
+function onError(contactError) 
+{
+  var element = document.getElementById('info');
   element.innerHTML = "ERROR";
 }
-
-
 
     </script>
   </head>
