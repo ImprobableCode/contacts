@@ -18,17 +18,23 @@ function onDeviceReady()
   var element = document.getElementById('info');
   element.innerHTML = "Ready";
 
-  navigator.contacts.find("*", onSuccess, onError, options);
+  var fields       = [navigator.contacts.fieldType.displayName, navigator.contacts.fieldType.name];
+  navigator.contacts.find(fields, onSuccess, onError, options);
 
   var element = document.getElementById('info');
-  element.innerHTML = "Ready2";
+  element.innerHTML = fields;
 }
 
  function onSuccess(contacts) 
                
                  {
-                    var element = document.getElementById('info');
-                    element.innerHTML = "Display Name = " + contacts.length;
+
+
+                    var element = document.getElementById('info2');
+                    element.innerHTML = "Display Name = " + contacts.displayName;
+
+                    var element = document.getElementById('info3');
+                    element.innerHTML = "Display Name = " + contacts.fieldType.name;
 
                  }
             
@@ -46,6 +52,8 @@ function onError(contactError) {
   </head>
   <body>
     <p id="info">Image info..</p>
+        <p id="info2">Image info..</p>
+            <p id="info3">Image info..</p>
   </body>
 </html>
 
