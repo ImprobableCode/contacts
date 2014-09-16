@@ -17,11 +17,9 @@ function onDeviceReady()
   //navigator.contacts.find(fields, onSuccess, onError, options);
 }
 
- function onSuccess() 
+ function onSuccess(contacts) 
                
      {
-        navigator.contacts.find(onSuccess, onError);
-  //navigator.contacts.find(fields, onSuccess, onError, options);
       var element = document.getElementById('info2');
       element.innerHTML = "Display Name = " + contacts.displayName;
 
@@ -29,7 +27,7 @@ function onDeviceReady()
       element.innerHTML = "Display Name = " + contacts.fieldType.name;
       }
            
-function onError(contactError) 
+function onError() 
 {
   var element = document.getElementById('info');
   element.innerHTML = "ERROR";
