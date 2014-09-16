@@ -10,16 +10,12 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady()
 {
-  // find all contacts with 'Bob' in any name field
- // var options = new ContactFindOptions();
-  //options.filter = "";
-
 
   var element = document.getElementById('info');
   element.innerHTML = "Ready";
 
   var fields       = navigator.contacts.fieldType.displayName;
-  navigator.contacts.find(fields, onSuccess, onError, options);
+  navigator.contacts.find(fields, onSuccess, onError);
 
 
 }
