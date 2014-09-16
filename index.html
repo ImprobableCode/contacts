@@ -10,7 +10,12 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady()
 {
-  navigator.contacts.find(contacts, onSuccess, onError, options);
+  // find all contacts with 'Bob' in any name field
+  var options = new ContactFindOptions();
+  options.filter = "Bob";
+  var fields = ["displayName", "name"];
+  
+  navigator.contacts.find(fields, onSuccess, onError, options);
 
   var element = document.getElementById('info');
   element.innerHTML = "Ready";
@@ -18,8 +23,18 @@ function onDeviceReady()
 
 
 function onSuccess(contacts) {
-    var element = document.getElementById('info');
-    element.innerHTML = "Found" + contacts.length + " contacts. ";
+            function onSuccess(contacts) {
+                for (var i = 0; i < contacts.length; i++)
+                 {
+                    var element = document.getElementById('info');
+                    element.innerHTML = "Display Name = " + contacts[i].displayname;
+
+           
+                }
+            }
+
+
+
 }
 
 function onError(contactError) {
@@ -27,15 +42,7 @@ function onError(contactError) {
   element.innerHTML = "ERROR";
 }
 
-/*function mine(){
-var options      = new ContactFindOptions();
-options.filter   = "Bob";
-options.multiple = true;
-options.desiredFields = [navigator.contacts.fieldType.id];
-var fields       = [navigator.contacts.fieldType.displayName, navigator.contacts.fieldType.name];
-*/
 
-}
 
     </script>
   </head>
