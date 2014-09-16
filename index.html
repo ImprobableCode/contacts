@@ -18,7 +18,7 @@ function onDeviceReady()
   var element = document.getElementById('info');
   element.innerHTML = "Ready";
 
-  var fields       = [navigator.contacts.fieldType.displayName, navigator.contacts.fieldType.name];
+  var fields       = navigator.contacts.fieldType.displayName;
   navigator.contacts.find(fields, onSuccess, onError, options);
 
 
