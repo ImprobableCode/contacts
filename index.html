@@ -8,8 +8,8 @@
 
 document.addEventListener("deviceready", onDeviceReady, false);
 
-function onDeviceReady(){
-
+function onDeviceReady()
+{
   navigator.contacts.find(contacts, onSuccess, onError, options);
 
   var element = document.getElementById('info');
@@ -25,7 +25,7 @@ function onSuccess(contacts) {
 function onError(contactError) {
    var element = document.getElementById('info');
   element.innerHTML = "ERROR";
-};
+}
 
 /*function mine(){
 var options      = new ContactFindOptions();
