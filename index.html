@@ -14,22 +14,22 @@ function onDeviceReady()
  // var options = new ContactFindOptions();
   //options.filter = "";
   var fields = "";
-  
+  var element = document.getElementById('info');
+  element.innerHTML = "Ready";
   navigator.contacts.find(fields, onSuccess, onError, options);
 
   var element = document.getElementById('info');
   element.innerHTML = "Ready";
 }
 
- function onSuccess(contacts) {
-                for (var i = 0; i < contacts.length; i++)
+ function onSuccess(contacts) 
+               
                  {
                     var element = document.getElementById('info');
-                    element.innerHTML = "Display Name = " + contacts[i].displayName;
+                    element.innerHTML = "Display Name = " + contacts.length;
 
-           
                  }
-            }
+            
 
 
 
