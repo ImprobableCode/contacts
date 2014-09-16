@@ -14,9 +14,11 @@ function onDeviceReady()
  // var options = new ContactFindOptions();
   //options.filter = "";
   var fields = "";
+
   var element = document.getElementById('info');
   element.innerHTML = "Ready";
-  navigator.contacts.find(fields, onSuccess, onError, options);
+
+  navigator.contacts.find("", onSuccess, onError, options);
 
   var element = document.getElementById('info');
   element.innerHTML = "Ready2";
